@@ -43,3 +43,7 @@ endif()
 
 file(COPY ${CMAKE_CURRENT_LIST_DIR}/usage DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT})
 file(INSTALL ${SOURCE_PATH}/LICENSE.txt  DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
+
+message("-- Fixing paths...")
+file(GLOB MISSING_FILES "${CURRENT_PACKAGES_DIR}/share/armadillo/*.cmake")
+file(COPY ${MISSING_FILES} DESTINATION ${CURRENT_PACKAGES_DIR}/share/Armadillo)
